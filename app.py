@@ -15,7 +15,7 @@ def fetch_poster(movie_id):
      return full_path
 
 
-movie=pickle.load(open('movie_recom_dict.pkl', 'rb'))
+movie=pickle.load(open('kmeans_model.pkl', 'rb'))
 movie=pd.DataFrame(movie)
 #cluster_list = movie["Cluster"].values
 
@@ -26,10 +26,10 @@ movie=pd.DataFrame(movie)
 # Loan Default Prediction Page
 
     # page title
-st.title('Movie recomm')
-st.text('Craig Chipendo')
-st.text('theVirus')
-st.text('Yolanda Chiike')
+st.title('Movie Clustering')
+st.text('Praise Ganyiwa')
+st.text('Shamiso Makainganwa')
+st.text('Gamuchirai Nyasulu')
     
     
     
@@ -37,7 +37,7 @@ st.text('Yolanda Chiike')
 col1 = st.columns(1)
     
 
-cluster = st.text_input('Enter Cluster 1-6')
+cluster = st.text_input('Enter Cluster 1-12')
         
 
         

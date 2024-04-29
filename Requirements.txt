@@ -1,7 +1,7 @@
 streamlit
 scikit-learn
 pandas
-
+sklearn
 absl-py==1.2.0
 antiorm==1.2.1
 anyascii==0.3.2

@@ -1,6 +1,6 @@
 def main():
     # Load the data
-    df = load_data('path_to_dataset.csv')
+    df = load_data('NETFLIX MOVIES AND TV SHOWS CLUSTERING.csv')
 
     # Perform K-means clustering
     cluster_labels = run_kmeans_clustering(df)

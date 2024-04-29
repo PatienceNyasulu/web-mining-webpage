@@ -46,6 +46,7 @@ res = ''
 
 
 #st.selectbox("select cluster",cluster_list)
+# Display movies by cluster
 
 
 
@@ -54,7 +55,7 @@ if st.button("show results"):
     movie_array = []
     res=movie_array
     cluster_id = cluster
-    cluster_movies = movie[movie['Cluster'] == cluster_id]['title']
+    cluster_movies = movie[movie['y_predict'] == cluster_id]['title']
 
     if not cluster_movies.empty:
         print(f"Movies in Cluster {cluster_id}:")

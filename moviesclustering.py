@@ -843,15 +843,6 @@ K-Means did better job in this dataset. It gives the insight that 12 is the perf
 
 import streamlit as st
 
-# Display clustered movies
-st.title('Movie Clustering')
-
-for cluster_id in range(k):
-    st.subheader(f'Cluster {cluster_id + 1}')
-    cluster_movies = df[df['cluster'] == cluster_id]['title'].tolist()
-    for movie in cluster_movies:
-        st.write(movie)
-
 # Create a Streamlit web page
 st.title('Netflix Movies Clustering')
 

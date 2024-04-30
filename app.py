@@ -34,7 +34,7 @@ st.header(f'Movies Found in Cluster {cluster_number}')
 cluster_movies = df[df['cluster_label'] == cluster_number - 1]  # Subtract 1 to match the cluster index
 
 # Display each movie in the cluster, but only the first 6 movies
-for _, row in cluster_movies.head(6).iterrows():
+for _, row in cluster_movies.head(10).iterrows():
     st.subheader(row['title'])
     st.write(f"Description: {row['description']}")
     st.text('---')  # Separator for better readability

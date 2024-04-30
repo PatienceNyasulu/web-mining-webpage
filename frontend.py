@@ -10,8 +10,10 @@ with open('merged_movie_cluster.pkl', 'rb') as f:
 
 # Load the K-means model and vectorizer
 kmeans_model = joblib.load('kmeans_model.pkl')
+with open('vectorizer.pkl', 'rb') as file:
+    vectorizer = pickle.load(file)
 #vectorizer = joblib.load('vectorizer.joblib')
-vectorizer = joblib.load('vectorizer.pkl')
+#vectorizer = joblib.load('vectorizer.pkl')
 
 # Streamlit application
 st.title('WebMining Movie Clusters ')

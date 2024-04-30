@@ -21,17 +21,8 @@ st.text('Gamuchirai Nyasulu')
 st.text('Link to github code: https://github.com/PatienceNyasulu/web-mining-webpage ')
 
 # Add background color
-background_color = '#6495ED'
-st.markdown(
-    f"""
-    <style>
-        .reportview-container {{
-            background-color: {background_color};
-        }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+st.set_page_config(layout='wide', page_title='WebMining Movie Clusters', page_icon=':clapper:', 
+                   initial_sidebar_state='auto', background_color='blue')
 
 # Let the user choose a cluster number
 st.header('Enter a Cluster')
@@ -49,5 +40,5 @@ cluster_movies = df[df['cluster_label'] == cluster_number - 1]  # Subtract 1 to 
 # Display each movie in the cluster, but only the first 6 movies
 for _, row in cluster_movies.head(6).iterrows():
     st.subheader(row['title'])
-    st.text(f"Description: {row['description']}")
+    st.write(f"Description: {row['description']}")
     st.text('---')  # Separator for better readability

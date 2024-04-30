@@ -15,7 +15,7 @@ def fetch_poster(movie_id):
      return full_path
 
 
-movie=pickle.load(open('merger_movie_cluster.pkl', 'rb'))
+movie=pickle.load(open('kmeans_model.pkl', 'rb'))
 movie=pd.DataFrame(movie)
 #cluster_list = movie["Cluster"].values
 

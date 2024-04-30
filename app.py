@@ -28,7 +28,7 @@ st.header('Enter a Cluster')
 col1 = st.columns(1)
     
 
-cluster_number = st.text_input('Enter Cluster 1-12')
+cluster_number = st.number_input('Enter Cluster 1-12')
         
 
 # Convert the cluster_number to an integer to match the data type of the 'cluster' column in the DataFrame

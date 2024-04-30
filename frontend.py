@@ -10,7 +10,7 @@ with open('merged_movie_cluster.pkl', 'rb') as f:
 
 # Load the K-means model and vectorizer
 kmeans_model = joblib.load('kmeans_model.pkl')
-vectorizer = joblib.load('vectorizer.joblib')
+#vectorizer = joblib.load('vectorizer.joblib')
 
 
 # Streamlit application

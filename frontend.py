@@ -5,7 +5,7 @@ from sklearn.cluster import KMeans
 import joblib
 
 # Load the DataFrame from the pickle file
-with open('movies_with_clusters.pkl', 'rb') as f:
+with open('merged_movie_cluster.pkl', 'rb') as f:
     df = pickle.load(f)
 
 # Load the K-means model and vectorizer
@@ -14,10 +14,10 @@ kmeans_model = joblib.load('kmeans_model.pkl')
 vectorizer = joblib.load('vectorizer.pkl')
 
 # Streamlit application
-st.title('Movie Clusters Viewer')
+st.title('WebMining Movie Clusters ')
 
 # Let the user choose a cluster number
-st.header('Select a Cluster')
+st.header('Enter a Cluster')
 num_clusters = kmeans_model.n_clusters
 cluster_number = st.number_input(f'Choose a cluster number (0 to {num_clusters - 1}):', min_value=0, max_value=num_clusters - 1, step=1)
 
@@ -34,5 +34,5 @@ cluster_movies = df[df['cluster'] == cluster_number]
 for _, row in cluster_movies.head(6).iterrows():
     st.subheader(row['title'])
     st.text(f"Description: {row['description']}")
-    st.text(f"Listen In: {row['listed_in']}")
+    st.text(f"Listed In: {row['listed_in']}")
     st.text('---')  # Separator for better readability

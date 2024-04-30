@@ -28,7 +28,7 @@ cluster_number = st.number_input('Enter a cluster number (1-12):', min_value=1, 
 cluster_number = int(cluster_number)
 
 # Display movies in the selected cluster
-st.header(f'Movies in Cluster {cluster_number}')
+st.header(f'Movies Found in Cluster {cluster_number}')
 
 # Filter movies based on the chosen cluster
 cluster_movies = df[df['cluster_label'] == cluster_number - 1]  # Subtract 1 to match the cluster index

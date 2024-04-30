@@ -15,7 +15,7 @@ def fetch_poster(movie_id):
      return full_path
 
 
-movie=pickle.load(open('kmeans_model.pkl', 'rb'))
+movie=pickle.load(open('merger_movie_cluster.pkl', 'rb'))
 movie=pd.DataFrame(movie)
 #cluster_list = movie["Cluster"].values
 
@@ -55,7 +55,7 @@ if st.button("show results"):
     movie_array = []
     res=movie_array
     cluster_id = cluster
-    cluster_movies = movie[movie['y_predict'] == cluster_id]['title']
+    cluster_movies = movie[movie['cluster_label'] == cluster_id]['title']
 
     if not cluster_movies.empty:
         print(f"Movies in Cluster {cluster_id}:")

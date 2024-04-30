@@ -18,20 +18,7 @@ st.title('WebMining Movie Clusters ')
 st.text('Praise Ganyiwa')
 st.text('Shamiso Makainganwa')
 st.text('Gamuchirai Nyasulu')
-st.text('Link to Github code: https://github.com/PatienceNyasulu/web-mining-webpage ')
-
-# Add background color
-background_color = '#6495ED'  # Blue color
-st.markdown(
-    f"""
-    <style>
-        body {{
-            background-color: {background_color};
-        }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+st.markdown('[Link to GitHub code](https://github.com/PatienceNyasulu/web-mining-webpage)')
 
 # Let the user choose a cluster number
 st.header('Enter a Cluster')

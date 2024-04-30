@@ -22,27 +22,19 @@ st.text('Link to github code: https://github.com/PatienceNyasulu/web-mining-webp
 
 # Let the user choose a cluster number
 st.header('Enter a Cluster')
-#num_clusters = kmeans_model.n_clusters
-#cluster_number = st.number_input(f'Choose a cluster number (0 to {num_clusters - 1}):', min_value=0, max_value=num_clusters - 1, step=1)
-    # getting the input data from the user
-col1 = st.columns(1)
-    
+cluster_number = st.number_input('Enter a cluster number (1-12):', min_value=1, max_value=12, step=1)
 
-cluster_number = st.number_input('Enter Cluster 1-12')
-        
-
-# Convert the cluster_number to an integer to match the data type of the 'cluster' column in the DataFrame
+# Convert the cluster_number to an integer to match the data type of the 'cluster_label' column in the DataFrame
 cluster_number = int(cluster_number)
 
 # Display movies in the selected cluster
 st.header(f'Movies in Cluster {cluster_number}')
 
 # Filter movies based on the chosen cluster
-cluster_movies = df[df['cluster_label'] == cluster_number]
+cluster_movies = df[df['cluster_label'] == cluster_number - 1]  # Subtract 1 to match the cluster index
 
 # Display each movie in the cluster, but only the first 6 movies
 for _, row in cluster_movies.head(6).iterrows():
     st.subheader(row['title'])
     st.text(f"Description: {row['description']}")
-    st.text(f"Listed In: {row['listed_in']}")
     st.text('---')  # Separator for better readability

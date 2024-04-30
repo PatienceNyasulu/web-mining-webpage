@@ -20,9 +20,22 @@ st.text('Shamiso Makainganwa')
 st.text('Gamuchirai Nyasulu')
 st.text('Link to github code: https://github.com/PatienceNyasulu/web-mining-webpage ')
 
+# Add background color
+background_color = '#f0f5f5'
+st.markdown(
+    f"""
+    <style>
+        .reportview-container {{
+            background-color: {background_color};
+        }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Let the user choose a cluster number
 st.header('Enter a Cluster')
-cluster_number = st.number_input('Enter a cluster number (1-12):', min_value=1, max_value=12, step=1)
+cluster_number = st.number_input('Enter a cluster number (1-12):', min_value=1, max_value=12)#, step=1)
 
 # Convert the cluster_number to an integer to match the data type of the 'cluster_label' column in the DataFrame
 cluster_number = int(cluster_number)

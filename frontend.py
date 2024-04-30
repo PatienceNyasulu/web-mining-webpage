@@ -9,8 +9,9 @@ with open('movies_with_clusters.pkl', 'rb') as f:
     df = pickle.load(f)
 
 # Load the K-means model and vectorizer
-kmeans_model = joblib.load('kmeans_model.joblib')
-vectorizer = joblib.load('vectorizer.joblib')
+kmeans_model = joblib.load('kmeans_model.pkl')
+#vectorizer = joblib.load('vectorizer.joblib')
+vectorizer = joblib.load('vectorizer.pkl')
 
 # Streamlit application
 st.title('Movie Clusters Viewer')

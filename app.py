@@ -21,7 +21,7 @@ st.text('Gamuchirai Nyasulu')
 st.text('Link to github code: https://github.com/PatienceNyasulu/web-mining-webpage ')
 
 # Add background color
-background_color = '#f0f5f5'
+background_color = '#6495ED'
 st.markdown(
     f"""
     <style>

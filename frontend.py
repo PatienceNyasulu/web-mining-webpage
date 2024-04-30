@@ -10,13 +10,14 @@ with open('merged_movie_cluster.pkl', 'rb') as f:
 
 # Load the K-means model and vectorizer
 kmeans_model = joblib.load('kmeans_model.pkl')
-with open('vectorizer.pkl', 'rb') as file:
-    vectorizer = pickle.load(file)
-#vectorizer = joblib.load('vectorizer.joblib')
-#vectorizer = joblib.load('vectorizer.pkl')
+vectorizer = joblib.load('vectorizer.joblib')
+
 
 # Streamlit application
 st.title('WebMining Movie Clusters ')
+st.text('Praise Ganyiwa')
+st.text('Shamiso Makainganwa')
+st.text('Gamuchirai Nyasulu')
 
 # Let the user choose a cluster number
 st.header('Enter a Cluster')
@@ -30,7 +31,7 @@ cluster_number = int(cluster_number)
 st.header(f'Movies in Cluster {cluster_number}')
 
 # Filter movies based on the chosen cluster
-cluster_movies = df[df['cluster'] == cluster_number]
+cluster_movies = df[df['cluster_label'] == cluster_number]
 
 # Display each movie in the cluster, but only the first 6 movies
 for _, row in cluster_movies.head(6).iterrows():
